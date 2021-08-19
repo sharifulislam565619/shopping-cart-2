@@ -1,0 +1,26 @@
+body {
+    background-color: rgba(238, 238, 238, 0.904);
+}
+
+header>h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.cart {
+    background-color: rgba(230, 230, 230, 0.788);
+    padding: 5% 7%;
+    margin-bottom: 20px;
+}
+
+.product {
+    background-color: #ffffff;
+
+}
+
+
+.fas {
+    font-size: 26px;
+
+}
