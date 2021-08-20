@@ -23,11 +23,11 @@ function getInputValue(input) {
 
 // Get Total Price
 function totalPrice() {
-    const jewelryPrice = getInputValue("jewelry") * 1500;
-    const watchPrice = getInputValue("watch") * 400;
-    const shoesPrice = getInputValue("shoes") * 500;
-    const subtotal = jewelryPrice + watchPrice + shoesPrice
-    const tax = subtotal / 10;
+    let jewelryPrice = getInputValue("jewelry") * 1500;
+    let watchPrice = getInputValue("watch") * 1000;
+    let shoesPrice = getInputValue("shoes") * 500;
+    let subtotal = jewelryPrice + watchPrice + shoesPrice
+    let tax = subtotal / 10;
     document.getElementById("subtotal").innerText = subtotal
     document.getElementById("tax").innerText = tax;
     document.getElementById("total").innerText = tax + subtotal;
@@ -38,23 +38,22 @@ function totalPrice() {
 
 // jewelry quantity plus
 document.getElementById("jewelry-plus").addEventListener("click", function () {
-    productQuantity("jewelry", 1500, true)
+        productQuantity("jewelry", 1500, true)
 
-})
-
-// jewelry quantity minus
-document.getElementById("jewelry-minus").addEventListener("click", function () {
-    productQuantity("jewelry", 1500, false)
-})
+    }) *
+    // jewelry quantity minus
+    document.getElementById("jewelry-minus").addEventListener("click", function () {
+        productQuantity("jewelry", 1500, false)
+    })
 
 // Watch quantity plus
 document.getElementById("watch-plus").addEventListener("click", function () {
-    productQuantity("watch", 400, true)
+    productQuantity("watch", 1000, true)
 })
 
 // Watch quantity minus
 document.getElementById("watch-minus").addEventListener("click", function () {
-    productQuantity("watch", 400, false)
+    productQuantity("watch", 1000, false)
 })
 
 // Shoes quantity plus
@@ -72,14 +71,50 @@ function removeItem(num) {
     document.getElementById("product-" + num).style.display = "none"
 }
 
+// total value after remove element
 document.getElementById("remove-jewelry").addEventListener("click", function () {
     removeItem("1")
+    let jewelryPrice = getInputValue("jewelry") * 1500;
+    let tax = document.getElementById("tax");
+    tax.innerText = tax.innerText - (jewelryPrice / 10)
+    const jQuantity = document.getElementById("jewelry-quantity")
+    jQuantity.value = 0
+    const sTotal = document.getElementById("subtotal")
+    sTotal.innerText = sTotal.innerText - jewelryPrice;
+    let total = document.getElementById("total")
+    total.innerText = total.innerText - (jewelryPrice + (jewelryPrice / 10));
+
+
+
 })
+//total value after remove this element
 document.getElementById("remove-watch").addEventListener("click", function () {
     removeItem("2")
+    let watchPrice = getInputValue("watch") * 1000;
+    let tax = document.getElementById("tax");
+    tax.innerText = tax.innerText - (watchPrice / 10)
+    const WQuantity = document.getElementById("watch-quantity")
+    WQuantity.value = 0
+    const sTotal = document.getElementById("subtotal")
+    sTotal.innerText = sTotal.innerText - watchPrice;
+    let total = document.getElementById("total")
+    total.innerText = total.innerText - (watchPrice + (watchPrice / 10));
+
 })
+//total value after remove this element
 document.getElementById("remove-shoes").addEventListener("click", function () {
     removeItem("3")
+    let shoesPrice = getInputValue("shoes") * 500;
+    let tax = document.getElementById("tax");
+    tax.innerText = tax.innerText - (shoesPrice / 10)
+    const sQuantity = document.getElementById("shoes-quantity")
+    sQuantity.value = 0
+    const sTotal = document.getElementById("subtotal")
+    sTotal.innerText = sTotal.innerText - shoesPrice;
+    let total = document.getElementById("total")
+    total.innerText = total.innerText - (shoesPrice + (shoesPrice / 10));
+
+
 })
 
 
