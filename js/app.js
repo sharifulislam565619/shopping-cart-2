@@ -81,8 +81,8 @@ document.getElementById("remove-jewelry").addEventListener("click", function () 
     jQuantity.value = 0
     const sTotal = document.getElementById("subtotal")
     sTotal.innerText = sTotal.innerText - jewelryPrice;
-    let total = document.getElementById("total")
-    total.innerText = total.innerText - (jewelryPrice + (jewelryPrice / 10));
+    let total=document.getElementById("total")
+    total.innerText =total.innerText- (jewelryPrice+(jewelryPrice / 10));
 
 
 
@@ -97,8 +97,8 @@ document.getElementById("remove-watch").addEventListener("click", function () {
     WQuantity.value = 0
     const sTotal = document.getElementById("subtotal")
     sTotal.innerText = sTotal.innerText - watchPrice;
-    let total = document.getElementById("total")
-    total.innerText = total.innerText - (watchPrice + (watchPrice / 10));
+    let total=document.getElementById("total")
+    total.innerText =total.innerText- (watchPrice+(watchPrice / 10));
 
 })
 //total value after remove this element
@@ -111,8 +111,8 @@ document.getElementById("remove-shoes").addEventListener("click", function () {
     sQuantity.value = 0
     const sTotal = document.getElementById("subtotal")
     sTotal.innerText = sTotal.innerText - shoesPrice;
-    let total = document.getElementById("total")
-    total.innerText = total.innerText - (shoesPrice + (shoesPrice / 10));
+    let total=document.getElementById("total")
+    total.innerText =total.innerText- (shoesPrice+(shoesPrice / 10));
 
 
 })
